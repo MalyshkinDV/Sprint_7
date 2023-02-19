@@ -22,27 +22,47 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
-            <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>5.3.0</version>
-            <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-junit4 -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit4</artifactId>
             <version>2.21.0</version>
-            <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-rest-assured -->
         <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-rest-assured</artifactId>
-            <version>2.21.0</version>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.14.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.24.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.19</version>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/pl.pragmatists/JUnitParams -->
+        <dependency>
+            <groupId>pl.pragmatists</groupId>
+            <artifactId>JUnitParams</artifactId>
+            <version>1.1.1</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     <build>
@@ -72,11 +92,10 @@
                     </systemProperties>
                 </configuration>
                 <dependencies>
-                    <!-- https://mvnrepository.com/artifact/aspectj/aspectjweaver -->
                     <dependency>
-                        <groupId>aspectj</groupId>
+                        <groupId>org.aspectj</groupId>
                         <artifactId>aspectjweaver</artifactId>
-                        <version>1.5.4</version>
+                        <version>${aspectj.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
