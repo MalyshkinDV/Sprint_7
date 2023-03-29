@@ -2,6 +2,8 @@ package models.request;
 
 import models.Model;
 
+import java.util.List;
+
 public class OrderModel implements Model {
     private String firstName;
     private String lastName;
@@ -11,11 +13,11 @@ public class OrderModel implements Model {
     private int rentTime;
     private String deliveryDate;
     private String comment;
-    private String[] color;
+    private List<String> color;
 
-    public OrderModel(String firstName, String lasName, String address, String metroStation, String phone, int rentTime, String deliveryDate, String comment, String[] color) {
+    public OrderModel(String firstName, String lastName, String address, String metroStation, String phone, int rentTime, String deliveryDate, String comment, List<String> color) {
         this.firstName = firstName;
-        this.lastName = lasName;
+        this.lastName = lastName;
         this.address = address;
         this.metroStation = metroStation;
         this.phone = phone;
@@ -25,9 +27,9 @@ public class OrderModel implements Model {
         this.color = color;
     }
 
-    public OrderModel(String firstName, String lasName, String address, String metroStation, String phone, int rentTime, String deliveryDate, String comment) {
+    public OrderModel(String firstName, String lastName, String address, String metroStation, String phone, int rentTime, String deliveryDate, String comment) {
         this.firstName = firstName;
-        this.lastName = lasName;
+        this.lastName = lastName;
         this.address = address;
         this.metroStation = metroStation;
         this.phone = phone;
@@ -47,12 +49,12 @@ public class OrderModel implements Model {
         this.firstName = firstName;
     }
 
-    public String getLasName() {
+    public String getLastName() {
         return lastName;
     }
 
-    public void setLasName(String lasName) {
-        this.lastName = lasName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getAddress() {
@@ -103,11 +105,11 @@ public class OrderModel implements Model {
         this.comment = comment;
     }
 
-    public String[] getColor() {
+    public List<String> getColor() {
         return color;
     }
 
-    public void setColor(String[] color) {
+    public void setColor(List<String> color) {
         this.color = color;
     }
 }

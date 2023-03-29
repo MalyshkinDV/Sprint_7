@@ -9,6 +9,8 @@ import models.response.OrdersModel;
 import models.response.PageInfoModel;
 import org.hamcrest.MatcherAssert;
 
+import java.util.List;
+
 import static org.apache.http.HttpStatus.SC_CREATED;
 import static org.apache.http.HttpStatus.SC_OK;
 import static org.hamcrest.Matchers.notNullValue;
@@ -17,14 +19,15 @@ public class OrdersApi extends Specifications{
     private final String ordersUri = "/api/v1/orders";
 
     @Step("Check create new order")
-    public Response createOrder(String firstName, String lasName, String address, String metroStation, String phone, int rentTime, String deliveryDate, String comment, String[] color) {
-        OrderModel orderModel = new OrderModel(firstName, lasName, address, metroStation, phone, rentTime, deliveryDate, comment, color);
+    public Response createOrder(String firstName, String lastName, String address, String metroStation, String phone, int rentTime, String deliveryDate, String comment, List<String> color
+    ) {
+        OrderModel orderModel = new OrderModel(firstName, lastName, address, metroStation, phone, rentTime, deliveryDate, comment, color);
         return sendPostRequest(ordersUri, orderModel);
     }
 
     @Step("Check create new order without key \"color\"")
-    public Response createOrderWithoutColor(String firstName, String lasName, String address, String metroStation, String phone, int rentTime, String deliveryDate, String comment) {
-        OrderModel orderModel = new OrderModel(firstName, lasName, address, metroStation, phone, rentTime, deliveryDate, comment);
+    public Response createOrderWithoutColor(String firstName, String lastName, String address, String metroStation, String phone, int rentTime, String deliveryDate, String comment) {
+        OrderModel orderModel = new OrderModel(firstName, lastName, address, metroStation, phone, rentTime, deliveryDate, comment);
         return sendPostRequest(ordersUri, orderModel);
     }
 

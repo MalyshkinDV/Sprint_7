@@ -2,6 +2,8 @@ package models.response;
 
 import models.Model;
 
+import java.util.List;
+
 
 public class OrdersModel implements Model {
     private int id;
@@ -14,7 +16,7 @@ public class OrdersModel implements Model {
     private int rentTime;
     private String deliveryDate;
     private int track;
-    private String[] color;
+    private List<String> color;
     private String comment;
     private String createdAt;
     private String updatedAt;
@@ -100,11 +102,11 @@ public class OrdersModel implements Model {
         this.track = track;
     }
 
-    public String[] getColor() {
+    public List<String> getColor() {
         return color;
     }
 
-    public void setColor(String[] color) {
+    public void setColor(List<String> color) {
         this.color = color;
     }
 

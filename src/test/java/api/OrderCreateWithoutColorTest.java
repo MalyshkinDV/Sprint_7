@@ -6,15 +6,11 @@ import io.restassured.response.Response;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
-
-@RunWith(Parameterized.class)
-public class OrderCreateTest {
+public class OrderCreateWithoutColor {
     private OrdersApi ordersApi;
     private String firstName;
     private String lastName;
@@ -24,39 +20,14 @@ public class OrderCreateTest {
     private int rentTime;
     private String deliveryDate;
     private String comment;
-    private final List<String> color;
-
-    public OrderCreateTest(List<String> color)
-    {
-        this.color = color;
-    }
-
-    @Parameterized.Parameters(name = "Order. Color: {0}")
-    public static Object[][] setValues() {
-        return new Object[][] {
-                {List.of("BLACK")},
-                {List.of("GREY")},
-                {List.of("BLACK, GREY")},
-                {List.of("")}
-        };
-    }
 
     @Test
-    @DisplayName("Create order with key \"color\"")
-    @Description("Создание заказа с разными значениями ключа \"color\"")
-    public void checkCreateOrder() {
-        Response response = ordersApi.createOrder(firstName, lastName, address, metroStation, phone, rentTime, deliveryDate, comment, color);
-        ordersApi.successOrderCreated(response);
-
-    }
-
-   /* @Test
     @DisplayName("Create order without key \"color\"")
     @Description("Создание заказа без ключа \"color\"")
     public void checkCreateOrderWithoutColor() {
         Response response = ordersApi.createOrderWithoutColor(firstName, lastName, address, metroStation, phone, rentTime, deliveryDate, comment);
         ordersApi.successOrderCreated(response);
-    }*/
+    }
 
     @Before
     public void setUp() {
