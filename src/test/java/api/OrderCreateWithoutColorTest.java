@@ -6,11 +6,10 @@ import io.restassured.response.Response;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Before;
 import org.junit.Test;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class OrderCreateWithoutColor {
+public class OrderCreateWithoutColorTest {
     private OrdersApi ordersApi;
     private String firstName;
     private String lastName;

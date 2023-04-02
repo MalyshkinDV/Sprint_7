@@ -50,14 +50,6 @@ public class OrderCreateTest {
 
     }
 
-   /* @Test
-    @DisplayName("Create order without key \"color\"")
-    @Description("Создание заказа без ключа \"color\"")
-    public void checkCreateOrderWithoutColor() {
-        Response response = ordersApi.createOrderWithoutColor(firstName, lastName, address, metroStation, phone, rentTime, deliveryDate, comment);
-        ordersApi.successOrderCreated(response);
-    }*/
-
     @Before
     public void setUp() {
         ordersApi = new OrdersApi();
